@@ -1,0 +1,31 @@
+<h2>Spring Boot with Angular Integration</h2>
+
+{{msg}}
+
+<form>
+ Contact Name: <input type="text" name="name" [(ngModel)]="contact.name" /> <br/>
+ Contact Email: <input type="text" name="email" [(ngModel)]="contact.email" /> <br/>
+ Contact Number: <input type="text" name="phno" [(ngModel)]="contact.phno" /> <br/>
+
+ <input type="button" value="Save" (click)="saveContact()"/>
+</form>
+
+<hr/>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phno</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phno}}</td>
+        </tr>
+    </tbody>
+
+</table>
